@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript">
+var thing = function(){
+	var self = this;
+	self.xlast = -1;
+	self.ylast = -1;
+
+	self.circle = function() {
+		radius = 200;
+		xmiddle = 500;
+		ymiddle = 300;
+		for (var i = 0; i <= 720; i++) {
+			x = parseInt(xmiddle + (radius * Math.sin(i * 2 * (Math.PI / 720))) + 0.5)
+			y = parseInt(ymiddle + (radius * Math.cos(i * 2 * (Math.PI / 720))) + 0.5)
+			if (self.xlast != x || self.ylast != y) {
+				self.xlast = x;
+				self.ylast = y;
+				document.write("<div style='position:absolute;left:" + x + "px;top:" + y + "px'><IMG SRC='https://placehold.it/3x3.jpg' WIDTH=3 HEIGHT=3 BORDER=0></div>");
+			}
+		}
+	}
+	
+	return self;
+};
+
+var c = new thing();
+c.circle(200,500,300);
+</script>
+</head>
+<body>
+</body>
+</html>

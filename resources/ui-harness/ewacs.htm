@@ -1,0 +1,70 @@
+<script type = "text/javascript">
+    var MotionSensor = function(){
+        //Internal reference
+        var self = this;
+        self.xlast = -1;
+    	self.ylast = -1;
+        //Meters
+        self.sensorMeter = {};
+        //Constructor
+        self.constructor = function(){
+            self.render();
+        };
+        //Render
+        self.render = function(){
+            //Clear the deck
+            $("#motionSensor").empty();
+            var radius = 150;
+    		var xmiddle = 760;
+    		var ymiddle = 350;
+    		for (var i = 0; i <= 720; i++) {
+    			x = parseInt(xmiddle + (radius * Math.sin(i * 2 * (Math.PI / 720))) + 0.5)
+    			y = parseInt(ymiddle + (radius * Math.cos(i * 2 * (Math.PI / 720))) + 0.5)
+    			if (self.xlast != x || self.ylast != y) {
+    				self.xlast = x;
+    				self.ylast = y;
+                    //Create the meter "stick"
+                    self.sensorMeter[i] = $("<div>").css({
+                        "position":"absolute",
+                        "left":x + "px",
+                        "top":y + "px",
+                        "width":"1px",
+                        "height":"1px",
+                        "background":"white",
+                        "-ms-transform": "rotate("+ i + "deg)",
+                        "-moz-transform": "rotate("+ i + "deg)",
+                        "-webkit-transform": "rotate("+ i + "deg)"
+                    });
+                    //Put it on the page
+                    $("#motionSensor").append(self.sensorMeter[i]);
+                    //"<div style='position:absolute;left:" + x + "px;top:" + y + "px'><IMG SRC='https://placehold.it/3x3.jpg' WIDTH=3 HEIGHT=3 BORDER=0></div>"
+    			}
+    		}
+            /*
+            //Render sensor meters (360 total)
+            for(i = 0;i < 360; i ++){
+                //Rotate and move it it by whatever degree we are on
+                $(self.sensorMeter[i]).css({
+                    "top":(i + i) + "px",
+                    "left":(i + i) + "px",
+                    "-ms-transform": "rotate("+ i + "deg)",
+                    "-moz-transform": "rotate("+ i + "deg)",
+                    "-webkit-transform": "rotate("+ i + "deg)"
+                });
+            }
+            */
+        };
+        //Showtime
+        $(document).ready(function(){
+            self.constructor();
+        });
+    };
+    //Instance
+    Tyrfing.EWACS = new MotionSensor();
+</script>
+<div id = "motionSensor" style = "width:100%;height:264px;">
+    <!--
+        Dynamically populated by MotionSensor JavaScript 'class'
+        <script type = "text/javascript" src = "../../plugins/circular-visualizer.js"></script>
+    -->
+</div>

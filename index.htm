@@ -1,0 +1,72 @@
+<html>
+   <head>
+      <link type="text/css" rel="stylesheet" href="resources/plugins/font-awesome/font-awesome.min.css">
+      <link rel="stylesheet" href="resources/core/Tyrfing.css">
+      <link rel="shortcut icon" href="favicon.ico" />
+   </head>
+   <body>
+      <!--<video id="cameraFeed" preload autoplay loop muted></video> -->
+      <video id="cameraFeed" preload="true" autoplay="true" loop="true" ></video>
+      <div id = "stage">
+         <div class = "stratum" style = "height:48px;">
+            <div class = "spotlight" id = "crossOverLeft">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "crossOverMiddle">
+                <i class = "fa fa-circle-o magiActivity" style = "color:white;font-size:32px;"></i>
+                <i class = "fa fa-circle-o magiActivity" style = "color:white;font-size:32px;"></i>
+                <i class = "fa fa-circle-o magiActivity" style = "color:white;font-size:32px;"></i>
+            </div>
+            <div class = "spotlight"  id = "crossOverRight" style="text-align:right;">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+         </div>
+         <div class = "stratum">
+            <div class = "spotlight"  id = "upStage">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+         </div>
+         <div class = "stratum" id = "focus">
+            <div class = "spotlight"  id = "offLeft">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "stageLeft">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "actingArea">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "stageRight">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "offRight">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+         </div>
+         <div class = "stratum">
+            <div class = "spotlight"  id = "apron">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+         </div>
+         <div class = "stratum">
+            <div class = "spotlight"  id = "houseLeft">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "audience">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+            <div class = "spotlight"  id = "houseRight">
+               <!-- Populated by Tyrfing.js -->
+            </div>
+         </div>
+      </div>
+      <!-- Dependencies -->
+      <script src="resources/core/jquery.js"></script>
+      <script src="resources/core/agx.js"></script>
+      <script src="resources/core/socket.io.js"></script>
+      <script src="resources/plugins/jplayer.js"></script>
+      <script src="resources/plugins/tracking/tracking.min.js"></script>
+      <script src="resources/core/Tyrfing.js"></script>
+      <!-- Dependencies -->
+   </body>
+</html>
